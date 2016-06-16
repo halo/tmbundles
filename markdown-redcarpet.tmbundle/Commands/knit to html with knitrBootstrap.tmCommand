@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>saveActiveFile</string>
+	<key>command</key>
+	<string>#!/usr/bin/env bash
+[[ -f "${TM_SUPPORT_PATH}/lib/bash_init.sh" ]] &amp;&amp; . "${TM_SUPPORT_PATH}/lib/bash_init.sh"
+
+# Source some support functions we need.
+. "${TM_SUPPORT_PATH}/lib/html.sh"
+. "${TM_SUPPORT_PATH}/lib/webpreview.sh"
+
+# Get the viewer program. Any program (that works with open -a &lt;name&gt;) can be used,
+# except 'html' which is reserved to mean the internal HTML window. This is also the
+# default option.
+# V=${TM_LATEX_VIEWER:-html}
+V="html"
+M=${TM_LATEX_MASTER:-$TM_FILEPATH}
+DIR=`dirname "$M"`
+FILENAME=`basename "${M}"`
+RESULT="${FILENAME%.*}.html"
+echo $FILENAME
+echo $DIR
+echo $RESULT
+
+
+# Switch to the right directory.
+cd "$TM_PROJECT_DIRECTORY"
+cd "$DIR"
+
+# Prepare output window.
+html_header 'knit html result with knitrBootstrap' "$FILENAME"
+echo '&lt;h2&gt;Kniting…&lt;/h2&gt;'
+
+# Choose R from the TextMate TM_REXEC variable or default to R
+if [ "$TM_REXEC" = "" ]
+	then USE_THIS_R="R"
+	else USE_THIS_R="$TM_REXEC"
+fi
+
+# Define working dir
+SW=${TM_SWEAVE_WD:=${TM_DIRECTORY}}
+# Actually run knitrBoostrap
+# More info at http://cran.at.r-project.org/web/packages/knitrBootstrap/index.html
+# You might want to change the code style, which 'chooser's so show and whether you want to show the code, figures, etc.
+echo -e "setwd('$SW');library(knitrBootstrap); if(packageVersion('knitrBootstrap') &lt; '1.0.0') knit_bootstrap('$FILENAME', code_style='Brown Paper', chooser=c('boot', 'code'), show_code=FALSE) else library(rmarkdown); render('$FILENAME', bootstrap_document(theme.chooser=TRUE, highlight.chooser=TRUE, highlight='Brown Paper'))" | ${USE_THIS_R} --vanilla --quiet | pre
+
+# If there is output and it's newer than the current document, then we go directly to preview or link to it.
+
+WEB_LOC="file://${DIR}/${RESULT}"
+WEB_LOC="${WEB_LOC//\\#/%23}"
+redirect "${WEB_LOC}"
+
+html_footer
+</string>
+	<key>input</key>
+	<string>none</string>
+	<key>inputFormat</key>
+	<string>text</string>
+	<key>keyEquivalent</key>
+	<string>~t</string>
+	<key>name</key>
+	<string>knit to html with knitrBootstrap</string>
+	<key>outputCaret</key>
+	<string>afterOutput</string>
+	<key>outputFormat</key>
+	<string>html</string>
+	<key>outputLocation</key>
+	<string>newWindow</string>
+	<key>scope</key>
+	<string>text.html.markdown.redcarpet, source.r</string>
+	<key>uuid</key>
+	<string>29B9DD01-6FB1-4A61-AD43-26F27408D378</string>
+	<key>version</key>
+	<integer>2</integer>
+</dict>
+</plist>
