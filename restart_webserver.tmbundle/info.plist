@@ -7,9 +7,9 @@
 	<key>contactName</key>
 	<string>Elia Schito</string>
 	<key>description</key>
-	<string>New shiny bundle for Pow! (http://pow.cx).</string>
+	<string>Touches tmp/restart.txt</string>
 	<key>name</key>
-	<string>Pow! (server)</string>
+	<string>Webserver restart</string>
 	<key>uuid</key>
 	<string>907E03D4-AFE7-4C2E-B9D3-D71AE7CD2BEE</string>
 </dict>

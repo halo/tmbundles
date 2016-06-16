@@ -26,7 +26,7 @@ test -d "$projectDirectory" &amp;&amp; test -d "$projectDirectory/tmp" &amp;&amp
 	<key>keyEquivalent</key>
 	<string>^~@r</string>
 	<key>name</key>
-	<string>Restart Pow</string>
+	<string>Restart Webserver</string>
 	<key>outputCaret</key>
 	<string>afterOutput</string>
 	<key>outputFormat</key>
