@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>changed</key>
+	<dict>
+		<key>isDisabled</key>
+		<true/>
+	</dict>
+	<key>isDelta</key>
+	<true/>
+	<key>uuid</key>
+	<string>2645C181-6C31-4487-8F98-895A059781C0</string>
+</dict>
+</plist>
