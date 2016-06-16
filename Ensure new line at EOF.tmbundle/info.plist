@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>contactEmailRot13</key>
+	<string>zfm@frag.pbz</string>
+	<key>contactName</key>
+	<string>Michal Szyndel</string>
+	<key>description</key>
+	<string>Adds new line at EOF if missing</string>
+	<key>name</key>
+	<string>Ensure New Line at the EOF</string>
+	<key>uuid</key>
+	<string>01221205-B321-4A26-88E5-BA1DBB045731</string>
+</dict>
+</plist>

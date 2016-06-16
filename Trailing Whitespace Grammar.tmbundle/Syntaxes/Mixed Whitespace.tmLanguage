@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>fileTypes</key>
+	<array/>
+	<key>injectionSelector</key>
+	<string>*</string>
+	<key>name</key>
+	<string>Mixed Whitespace</string>
+	<key>patterns</key>
+	<array>
+		<dict>
+			<key>match</key>
+			<string>([^\S\n\f\r])\1*(?!\1)[^\S\n\f\r]+</string>
+			<key>name</key>
+			<string>invalid.illegal.whitespace.mixed</string>
+		</dict>
+	</array>
+	<key>scope</key>
+	<string>source.ruby</string>
+	<key>uuid</key>
+	<string>0B249F99-FC38-49F4-AA15-3B7DFF9F8DFA</string>
+</dict>
+</plist>
