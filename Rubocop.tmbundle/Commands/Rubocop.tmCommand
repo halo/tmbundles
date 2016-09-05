@@ -12,8 +12,6 @@ if [ -z "$TM_RUBY" ]; then
   exit 1
 fi
 
-echo $TM_BUNDLE_SUPPORT
-
 "$TM_RUBY" "$TM_BUNDLE_SUPPORT/rubocop.rb"
 </string>
 	<key>input</key>
@@ -29,7 +27,7 @@ echo $TM_BUNDLE_SUPPORT
 	<key>outputFormat</key>
 	<string>text</string>
 	<key>outputLocation</key>
-	<string>discard</string>
+	<string>toolTip</string>
 	<key>semanticClass</key>
 	<string>#callback.document.did-save</string>
 	<key>uuid</key>

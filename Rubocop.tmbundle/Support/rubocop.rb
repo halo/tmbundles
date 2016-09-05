@@ -61,7 +61,13 @@ def command(messages)
   "#{ENV['TM_MATE']} #{args.join(' ')}"
 end
 
-cmd = command(messages(offences(ENV['TM_FILEPATH'])))
+content = messages(offences(ENV['TM_FILEPATH']))
+if content.values.all?(&:empty?)
+  STDERR.write 'Rubocop is pleased.'
+else
+  STDERR.write 'Looks like you can improve your code.'
+end
 
+cmd = command(content)
 # log cmd
 exec cmd
