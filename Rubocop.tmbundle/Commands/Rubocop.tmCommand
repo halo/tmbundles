@@ -8,9 +8,11 @@
 	<string>#!/usr/bin/env sh
 
 if [ -z "$TM_RUBY" ]; then
-    echo "Need to set TM_RUBY"
-    exit 1
-fi  
+  echo "Need to set TM_RUBY"
+  exit 1
+fi
+
+echo $TM_BUNDLE_SUPPORT
 
 "$TM_RUBY" "$TM_BUNDLE_SUPPORT/rubocop.rb"
 </string>
@@ -19,7 +21,7 @@ fi
 	<key>inputFormat</key>
 	<string>text</string>
 	<key>keyEquivalent</key>
-	<string>@k</string>
+	<string>^~@k</string>
 	<key>name</key>
 	<string>Rubocop</string>
 	<key>outputCaret</key>
@@ -28,8 +30,6 @@ fi
 	<string>text</string>
 	<key>outputLocation</key>
 	<string>discard</string>
-	<key>scope</key>
-	<string>source.ruby</string>
 	<key>semanticClass</key>
 	<string>#callback.document.did-save</string>
 	<key>uuid</key>
