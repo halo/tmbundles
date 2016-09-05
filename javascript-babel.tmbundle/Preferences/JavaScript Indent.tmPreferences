@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>name</key>
+	<string>JavaScript Indent</string>
+	<key>scope</key>
+	<string>source.js</string>
+	<key>settings</key>
+	<dict>
+		<key>decreaseIndentPattern</key>
+		<string>(?x)
+      ^ \s* [\])\}].*   \s* $
+    | ^ \s* &lt;/[\w\.]+&gt;  \s* $
+    | ^ \s* /?&gt;         \s* $
+    </string>
+		<key>increaseIndentPattern</key>
+		<string>(?x)
+    # open curly brace without closing curly brace or (double)quotes 
+      ^  .*  \{[^}"']*     $
+    # lines ending in opening brackets
+    | ^  .*  [\(\[]     \s* $
+    # opening jsx-tags
+    | ^ \s* [\?:]?\s?&lt;\w[^&lt;/]+   \s* $
+    | ^ \s* &gt;           \s* $
+    </string>
+		<key>indentNextLinePattern</key>
+		<string>(?x)
+    # indent next line for if, while, else, for if no block was started
+      ^ \s* \b(if|while|else)\b [^;]* $
+    | ^ \s* \b(for)\b              .* $
+    </string>
+	</dict>
+	<key>uuid</key>
+	<string>d408c7f9-4402-4a22-98f9-156c144591b7</string>
+</dict>
+</plist>
