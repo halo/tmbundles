@@ -12,6 +12,9 @@ if [ -z "$TM_RUBY" ]; then
   exit 1
 fi
 
+# export RUBY_VERSION=$RBENV_VERSION
+# echo $($TM_RUBY -v)
+
 "$TM_RUBY" "$TM_BUNDLE_SUPPORT/rubocop.rb"
 </string>
 	<key>input</key>
