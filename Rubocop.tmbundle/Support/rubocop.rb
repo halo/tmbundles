@@ -15,12 +15,19 @@ end
 
 def offences(file)
   ruby_version = RUBY_VERSION.split('.')[0..1].join('.').to_f
-  processed_source = RuboCop::ProcessedSource.from_file(file, ruby_version)
+
+  config_file = RuboCop::ConfigLoader.configuration_file_for file
+  Dir.chdir File.dirname(config_file)
+
+  config = RuboCop::ConfigStore.new.for(file)
+
   team = RuboCop::Cop::Team.new(
     RuboCop::Cop::Cop.all,
-    RuboCop::ConfigStore.new.for(processed_source.path),
+    config,
     {}
   )
+
+  processed_source = RuboCop::ProcessedSource.from_file(file, ruby_version)
   team.inspect_file(processed_source)
 end
 
@@ -41,11 +48,11 @@ end
 
 def command(messages)
   icons = {
-    refactor:   "#{ENV['TM_BUNDLE_SUPPORT']}/evil.png".inspect,
-    convention: "#{ENV['TM_BUNDLE_SUPPORT']}/confused.png".inspect,
-    warning:    "#{ENV['TM_BUNDLE_SUPPORT']}/neutral.png".inspect,
-    error:      "#{ENV['TM_BUNDLE_SUPPORT']}/sad.png".inspect,
-    fatal:      "#{ENV['TM_BUNDLE_SUPPORT']}/shocked.png".inspect
+    refactor:   "#{ENV['TM_BUNDLE_SUPPORT']}/rubocop.pdf".inspect,
+    convention: "#{ENV['TM_BUNDLE_SUPPORT']}/rubocop.pdf".inspect,
+    warning:    "#{ENV['TM_BUNDLE_SUPPORT']}/rubocop.pdf".inspect,
+    error:      "#{ENV['TM_BUNDLE_SUPPORT']}/rubocop.pdf".inspect,
+    fatal:      "#{ENV['TM_BUNDLE_SUPPORT']}/rubocop.pdf".inspect
   }
   args = []
 
