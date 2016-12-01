@@ -28,7 +28,8 @@ def offences(file)
   )
 
   processed_source = RuboCop::ProcessedSource.from_file(file, ruby_version)
-  team.inspect_file(processed_source)
+  offences = team.inspect_file(processed_source)
+  offences.reject(&:disabled?)
 end
 
 def messages(offences)
