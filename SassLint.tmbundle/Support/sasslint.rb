@@ -27,26 +27,25 @@ cmd = [
 ]
 
 json, status = Open3.capture2(*cmd)
-output = JSON.parse(json) rescue nil
+output = JSON.parse(json) rescue []
 
-if status.exitstatus.zero? && !output
-  STDERR.write 'Sass Linter is pleased.'
-  exit
-end
+offences = output.first['messages'] rescue []
 
-offences = output.first['messages']
-
-args = []
+args = ["--clear-mark=#{icon_path}"]
 offences.each do |offence|
   offence = OpenStruct.new(offence)
   message = "#{offence.message} (#{offence.ruleId})"
 
-  args << ["--clear-mark=#{icon_path}"]
   args << "--set-mark=#{icon_path}:#{Shellwords.escape(message)}"
   args << "--line=#{offence['line']}"
 end
 args << ENV['TM_FILEPATH'].inspect
 cmd = "#{ENV['TM_MATE']} #{args.join(' ')}"
 
-STDERR.write 'Looks like you can improve your style.'
+if status.exitstatus.zero? && output == []
+  STDERR.write 'Sass Linter is pleased.'
+else
+  STDERR.write 'Looks like you can improve your style.'
+end
+
 exec cmd
