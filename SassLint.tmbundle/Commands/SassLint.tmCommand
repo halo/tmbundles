@@ -15,7 +15,7 @@ fi
 # export RUBY_VERSION=$RBENV_VERSION
 # echo $($TM_RUBY -v)
 
-"$TM_RUBY" "$TM_BUNDLE_SUPPORT/rubocop.rb"
+"$TM_RUBY" "$TM_BUNDLE_SUPPORT/sasslint.rb"
 </string>
 	<key>input</key>
 	<string>document</string>
@@ -24,7 +24,7 @@ fi
 	<key>keyEquivalent</key>
 	<string>^~@k</string>
 	<key>name</key>
-	<string>Rubocop</string>
+	<string>SassLint</string>
 	<key>outputCaret</key>
 	<string>afterOutput</string>
 	<key>outputFormat</key>
@@ -32,11 +32,11 @@ fi
 	<key>outputLocation</key>
 	<string>toolTip</string>
 	<key>scope</key>
-	<string>source.ruby</string>
+	<string>source.sass</string>
 	<key>semanticClass</key>
 	<string>#callback.document.did-save</string>
 	<key>uuid</key>
-	<string>DE69EC1A-69A4-4B9D-9A3C-7772250EA624</string>
+	<string>6E912ECA-8BF8-4701-A1FC-C31EBD0DCD6C</string>
 	<key>version</key>
 	<integer>2</integer>
 </dict>

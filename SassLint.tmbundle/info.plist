@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>contactEmailRot13</key>
+	<string>sasslint@example.com</string>
+	<key>contactName</key>
+	<string>sasstools</string>
+	<key>description</key>
+	<string>Linting SCSS and SASS files</string>
+	<key>name</key>
+	<string>SassLint</string>
+	<key>uuid</key>
+	<string>6E912ECA-8BF8-4701-A1FC-C31EBD0DCD6C</string>
+</dict>
+</plist>
