@@ -19,13 +19,10 @@ def offences(file)
   config_file = RuboCop::ConfigLoader.configuration_file_for file
   Dir.chdir File.dirname(config_file)
 
+  cops = RuboCop::Cop::Cop.all
+  cops = RuboCop::Cop::Registry.new(cops) if defined?(RuboCop::Cop::Registry)
   config = RuboCop::ConfigStore.new.for(file)
-
-  team = RuboCop::Cop::Team.new(
-    RuboCop::Cop::Cop.all,
-    config,
-    {}
-  )
+  team = RuboCop::Cop::Team.new(cops, config)
 
   processed_source = RuboCop::ProcessedSource.from_file(file, ruby_version)
   offences = team.inspect_file(processed_source)
