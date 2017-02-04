@@ -19,6 +19,10 @@ def offences(file)
   config_file = RuboCop::ConfigLoader.configuration_file_for file
   Dir.chdir File.dirname(config_file)
 
+  # This will `require` any specified extensions such as
+  # https://github.com/backus/rubocop-rspec#rubocop-configuration-file
+  RuboCop::ConfigLoader.load_file config_file
+
   cops = RuboCop::Cop::Cop.all
   cops = RuboCop::Cop::Registry.new(cops) if defined?(RuboCop::Cop::Registry)
   config = RuboCop::ConfigStore.new.for(file)
