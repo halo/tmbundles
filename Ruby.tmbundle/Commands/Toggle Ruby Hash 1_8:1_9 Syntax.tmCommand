@@ -4,33 +4,10 @@
 <dict>
 	<key>changed</key>
 	<dict>
-		<key>command</key>
-		<string>#!/usr/bin/env ruby18
-
-require ENV['TM_SUPPORT_PATH'] + '/lib/exit_codes'
-
-def toggle_string_symbol(str)
-  case str
-  # "string" =&gt; :symbol
-  when /("|')(\w+)\1/
-    str.gsub!(/("|')(\w+)\1/, ':\2')
-  # :symbol =&gt; "string"
-  when /:(\w+)/
-    str.gsub!(/:(\w+)/, %q('\1'))
-  # initial case (no changes)
-  else
-    str
-  end
-end
-
-while str = $stdin.gets
-  print toggle_string_symbol(str)
-end
-</string>
 		<key>inputFormat</key>
 		<string>text</string>
 		<key>keyEquivalent</key>
-		<string>^~@.</string>
+		<string>^~@0</string>
 		<key>outputCaret</key>
 		<string>heuristic</string>
 		<key>outputFormat</key>
@@ -47,6 +24,6 @@ end
 	<key>isDelta</key>
 	<true/>
 	<key>uuid</key>
-	<string>B297E4B8-A8FF-49CE-B9C4-6D4911724D43</string>
+	<string>F4EEB2B6-07D8-402F-8FC3-79B7308D2576</string>
 </dict>
 </plist>
