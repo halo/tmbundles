@@ -15,16 +15,14 @@ fi
 # export RUBY_VERSION=$RBENV_VERSION
 # echo $($TM_RUBY -v)
 
-"$TM_RUBY" "$TM_BUNDLE_SUPPORT/rubocop.rb"
+"$TM_RUBY" "$TM_BUNDLE_SUPPORT/rubomate.rb"
 </string>
 	<key>input</key>
-	<string>document</string>
+	<string>none</string>
 	<key>inputFormat</key>
 	<string>text</string>
-	<key>keyEquivalent</key>
-	<string>^~@k</string>
 	<key>name</key>
-	<string>Rubocop</string>
+	<string>Run RuboCop</string>
 	<key>outputCaret</key>
 	<string>afterOutput</string>
 	<key>outputFormat</key>
@@ -32,11 +30,11 @@ fi
 	<key>outputLocation</key>
 	<string>toolTip</string>
 	<key>scope</key>
-	<string>source.ruby</string>
+	<string>source.ruby - (source.ruby.embedded, source.ruby.rails.embedded, meta.embedded.line.erb, meta.embedded.block.erb, markup.raw.block.ruby)</string>
 	<key>semanticClass</key>
-	<string>#callback.document.did-save</string>
+	<string>callback.document.did-save, callback.document.did-reload</string>
 	<key>uuid</key>
-	<string>DE69EC1A-69A4-4B9D-9A3C-7772250EA624</string>
+	<string>0EA6C62D-D2BE-415C-B645-E32203CD22B9</string>
 	<key>version</key>
 	<integer>2</integer>
 </dict>
