@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>changed</key>
+	<dict>
+		<key>content</key>
+		<string>VCR.use_cassette :${1:} do
+  $0
+end</string>
+		<key>name</key>
+		<string>VCR</string>
+		<key>tabTrigger</key>
+		<string>vcr</string>
+	</dict>
+	<key>isDelta</key>
+	<true/>
+	<key>uuid</key>
+	<string>520CA137-E4FC-4DB0-92DA-980DFE54A35B</string>
+</dict>
+</plist>
