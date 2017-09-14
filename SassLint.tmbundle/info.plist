@@ -12,5 +12,14 @@
 	<string>SassLint</string>
 	<key>uuid</key>
 	<string>6E912ECA-8BF8-4701-A1FC-C31EBD0DCD6C</string>
+	<key>require</key>
+	<array>
+		<dict>
+			<key>name</key>
+			<string>Ruby</string>
+			<key>uuid</key>
+			<string>467B298F-6227-11D9-BFB1-000D93589AF6</string>
+		</dict>
+	</array>
 </dict>
 </plist>
