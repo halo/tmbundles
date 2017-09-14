@@ -71,7 +71,7 @@ SassMate.run do |offence_count|
   case offence_count
   when false
     TextMate::UI.tool_tip('Could not find node or sass-lint executable, please set TM_NODE and TM_SASS_LINT')
-  when 0
+  when nil
     # Be slient if there were no offences
   else
     TextMate::UI.tool_tip 'Looks like you can improve your style.'
