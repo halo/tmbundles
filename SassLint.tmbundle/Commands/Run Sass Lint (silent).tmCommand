@@ -15,7 +15,7 @@ fi
 # export RUBY_VERSION=$RBENV_VERSION
 # echo $($TM_RUBY -v)
 
-"$TM_RUBY" "$TM_BUNDLE_SUPPORT/sassmate.rb" &gt; /Users/orange/Desktop/sass.log
+"$TM_RUBY" "$TM_BUNDLE_SUPPORT/sassmate.rb" &gt; /dev/null
 </string>
 	<key>input</key>
 	<string>none</string>

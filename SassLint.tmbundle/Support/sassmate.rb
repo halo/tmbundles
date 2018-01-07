@@ -6,7 +6,7 @@ class SassMate
   def self.run(&block)
     Dir.chdir(ENV['TM_PROJECT_DIRECTORY'])
 
-    if executable
+    if executable && linter_executable
       new.run(&block)
     else
       yield false
@@ -58,7 +58,7 @@ class SassMate
 
   def run!
     offence_count = nil
-    TextMate::Executor.run(self.class.linter_executable, paths, options) do |line, _|
+    TextMate::Executor.run(self.class.executable, self.class.linter_executable, paths, options) do |line, _|
       offence_count = Regexp.last_match(1).to_i if line.match?(/\./)
       nil # <- Passing on stdout to the Executor, it can read clang and add line marks.
     end
