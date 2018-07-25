@@ -14,15 +14,17 @@ until [[ -d "$(pwd)/tmp" ]]; do
 done
 
 projectDirectory="$(pwd)"
-echo "Touched restart.txt of\n$projectDirectory"
+
+test -x "$TM_PASSENGER_CONFIG" &amp;&amp; $TM_PASSENGER_CONFIG restart-app $projectDirectory
+
+echo "Touched restart.txt of $projectDirectory"
 test -d "$projectDirectory" &amp;&amp; test -d "$projectDirectory/tmp" &amp;&amp; touch "$projectDirectory/tmp/restart.txt" || echo 'Not a webserver?'
+
 </string>
 	<key>input</key>
 	<string>selection</string>
 	<key>inputFormat</key>
 	<string>text</string>
-	<key>isDisabled</key>
-	<false/>
 	<key>keyEquivalent</key>
 	<string>^~@r</string>
 	<key>name</key>
