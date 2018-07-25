@@ -7,10 +7,8 @@
 		<key>content</key>
 		<string>require 'rails_helper'
 
-RSpec.describe $0 do
-
-  
-
+RSpec.describe $1 do
+  $2
 end
 </string>
 		<key>name</key>
