@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>nop</string>
+	<key>command</key>
+	<string>#!/usr/bin/env sh
+
+if [ -z "$TM_RUBY" ]; then
+  echo "Need to set TM_RUBY"
+  exit 1
+fi
+
+"$TM_RUBY" "$TM_BUNDLE_SUPPORT/eslintmate.rb" &gt; /dev/null
+</string>
+	<key>input</key>
+	<string>none</string>
+	<key>inputFormat</key>
+	<string>text</string>
+	<key>name</key>
+	<string>Run ESLint</string>
+	<key>outputCaret</key>
+	<string>afterOutput</string>
+	<key>outputFormat</key>
+	<string>text</string>
+	<key>outputLocation</key>
+	<string>toolTip</string>
+	<key>scope</key>
+	<string>source.js</string>
+	<key>semanticClass</key>
+	<string>callback.document.did-save, callback.document.did-reload</string>
+	<key>uuid</key>
+	<string>0EA6C62D-D2BE-415C-B645-E32203CD22B3</string>
+	<key>version</key>
+	<integer>2</integer>
+</dict>
+</plist>

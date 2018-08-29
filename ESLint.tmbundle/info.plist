@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>contactEmailRot13</key>
+	<string></string>
+	<key>contactName</key>
+	<string>ESLint</string>
+	<key>description</key>
+	<string>A bundle for &lt;a href="http://eslint.org"&gt;ESLint&lt;/a&gt;</string>
+	<key>mainMenu</key>
+	<dict>
+		<key>excludedItems</key>
+		<array>
+			<string>58081B0D-7382-4DC0-BC3D-D58474968633</string>
+			<string>308F695E-1262-4AA0-880E-99B5E5A3779C</string>
+		</array>
+	</dict>
+	<key>name</key>
+	<string>ESLint</string>
+	<key>uuid</key>
+	<string>4AE7A4EC-95DE-4B0A-BFD9-359B5D260844</string>
+	<key>require</key>
+	<array>
+		<dict>
+			<key>name</key>
+			<string>Ruby</string>
+			<key>uuid</key>
+			<string>467B298F-6227-11D9-BFB1-000D93589AF6</string>
+		</dict>
+	</array>
+</dict>
+</plist>
