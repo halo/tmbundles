@@ -57,7 +57,7 @@ class ESLintMate
   def run!
     offence_count = nil
     TextMate::Executor.run(self.class.executable, self.class.linter_executable, paths, options) do |line, _|
-      offence_count = Regexp.last_match(1).to_i if line.match?(/\./)
+      offence_count = Regexp.last_match(1).to_i if line =~ /\./
       nil # <- Passing on stdout to the Executor, it can read clang and add line marks.
     end
 
